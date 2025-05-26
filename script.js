@@ -15,7 +15,7 @@ const container = document.getElementById('days-container');
 schedule.forEach((day) => {
   const card = document.createElement('div');
   card.classList.add('fade-in');
-  card.className = 'day-card layout-right-image';
+  card.className = 'day-card layout-left-image';
   if (day.dayNumber === 9) {
     card.classList.add('highlight-day');
   }
