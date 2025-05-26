@@ -25,17 +25,20 @@
 
     <section id="memories-section">
       <h2>📸 Memories from Past Years</h2>
-      <div id="memories-gallery">
-        <img class="fade-in" src="memories/photo1.jpeg" alt="Celebration 1" />
-        <img class="fade-in" src="memories/photo2.jpeg" alt="Celebration 2" />
-        <img class="fade-in" src="memories/photo3.jpeg" alt="Celebration 3" />
-        <img class="fade-in" src="memories/photo4.jpeg" alt="Celebration 4" />
-        <img class="fade-in" src="memories/photo5.jpeg" alt="Celebration 5" />
-        <img class="fade-in" src="memories/photo6.jpeg" alt="Celebration 6" />
-        <img class="fade-in" src="memories/photo7.jpeg" alt="Celebration 7" />
-
+      <div class="carousel-container">
+        <button class="carousel-btn left" onclick="scrollGallery(-1)">&#10094;</button>
+        <div class="carousel-track" id="carousel">
+          <img class="carousel-image fade-in" src="memories/photo1.jpeg" alt="Celebration 1" />
+          <img class="carousel-image fade-in" src="memories/photo2.jpeg" alt="Celebration 2" />
+          <img class="carousel-image fade-in" src="memories/photo3.jpeg" alt="Celebration 3" />
+          <img class="carousel-image fade-in" src="memories/photo4.jpeg" alt="Celebration 4" />
+          <img class="carousel-image fade-in" src="memories/photo5.jpeg" alt="Celebration 5" />
+          <img class="carousel-image fade-in" src="memories/photo6.jpeg" alt="Celebration 6" />
+          <img class="carousel-image fade-in" src="memories/photo7.jpeg" alt="Celebration 7" />
+        </div>
+        <button class="carousel-btn right" onclick="scrollGallery(1)">&#10095;</button>
       </div>
-    </section>
+    </section>    
   </main>
 
   <footer>

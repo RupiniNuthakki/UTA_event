@@ -15,8 +15,13 @@ const container = document.getElementById('days-container');
 schedule.forEach((day) => {
   const card = document.createElement('div');
   card.classList.add('fade-in');
-  card.className = 'day-card';
-  if (day.dayNumber === 9) card.classList.add('highlight-day');
+  card.className = 'day-card layout-right-image';
+  if (day.dayNumber % 2 === 0) {
+    card.className = 'day-card layout-left-image';
+  }
+  if (day.dayNumber === 9) {
+    card.classList.add('highlight-day');
+  }
 
   const iconContainer = document.createElement('div');
   iconContainer.className = 'icon-container';
@@ -80,5 +85,11 @@ window.addEventListener('load', handleScrollAnimations); // Run on page load
 function scrollGallery(direction) {
   const track = document.querySelector('.carousel-track');
   const scrollAmount = 270; // width + gap
+  track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
+
+function scrollGallery(direction) {
+  const track = document.querySelector('.carousel-track');
+  const scrollAmount = 270; // Adjust if needed
   track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
 }
