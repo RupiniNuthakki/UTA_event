@@ -39,17 +39,32 @@ main {
   padding-bottom: 0.3em;
 }
 
-#schedule-section h2, 
-#memories-section h2, 
+/* Section Heading Style */
+#schedule-section h2,
+#memories-section h2,
 #countdown h2 {
   text-align: center;
   font-size: 1.8em;
   color: #d84315;
-  border-bottom: 3px solid #ff7043;
-  display: inline-block;
-  padding-bottom: 0.3em;
   margin-bottom: 1em;
+  position: relative;
+  padding-bottom: 0.5em;
 }
+
+#schedule-section h2::after,
+#memories-section h2::after,
+#countdown h2::after {
+  content: "";
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  margin: 0.5em auto 0;
+  height: 3px;
+  background-color: #ff7043;
+  border-radius: 2px;
+}
+
+
 
 #days-container {
   display: flex;
