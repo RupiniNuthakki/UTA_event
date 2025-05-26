@@ -1,52 +1,320 @@
-
 body {
-  font-family: sans-serif;
-  background-color: #fffaf0;
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff8e7;
   margin: 0;
   padding: 0;
+  color: #3e2723;
 }
+
 header {
-  background-color: #ffcc80;
-  padding: 20px;
+  background: linear-gradient(to right, #ff9800, #ff5722);
   text-align: center;
+  padding: 2em 1em;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-#timer {
-  font-size: 1.2em;
+
+header h1 {
+  font-size: 2.5em;
   font-weight: bold;
 }
+
+header p {
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+
+main {
+  padding: 2em 1em;
+  max-width: 1000px;
+  margin: auto;
+}
+
+#schedule h2, #gallery h2 {
+  font-size: 1.8em;
+  color: #d84315;
+  margin-bottom: 1em;
+  text-align: center;
+  border-bottom: 2px solid #ff7043;
+  padding-bottom: 0.3em;
+}
+
 #days-container {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  gap: 1em;
 }
+
 .day-card {
-  border: 2px solid #f9c74f;
-  border-radius: 10px;
-  margin: 10px;
-  padding: 10px;
+  background: #fff3e0;
+  border-left: 6px solid #ff7043;
+  border: 2px solid #ffcc80;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);
+  transition: transform 0.2s;
+  align-items: flex-start;
+}
+
+.day-card:hover {
+  transform: scale(1.02);
+  background: #ffe0b2;
+}
+
+.day-card h3 {
+  margin: 0 0 0.5em 0;
+  color: #bf360c;
+  font-size: 1.3em;
+}
+
+.day-card.layout-left-image {
   display: flex;
-  background-color: #fff3cd;
+  flex-direction: row;
+  gap: 75px; /* ADDED GAP */
 }
-.highlight-day {
-  background-color: #ffeb3b;
-  border: 2px solid #f57f17;
+
+.day-card.layout-right-image {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px; /* ADDED GAP */
 }
+
+.icon-container {
+  width: 30%;
+  max-width: 140px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
 .icon-container img {
-  width: 100px;
-  height: 100px;
-}
-.text-container {
-  margin-left: 20px;
-}
-#memories-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px;
-}
-#memories-gallery img {
-  width: 200px;
+  max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  display: block;
+}
+
+.event-icon {
+  width: 100%;
+  margin-top: 20px;
+  max-width: 120px;
+  height: auto;
+  border-radius: 16px;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.big-icon {
+  margin-top: 40px;
+  max-width: 160px;
+  max-height: 160px;
+  transform: scale(1.15);
+  margin-left: auto;
+}
+
+.text-container {
+  width: 70%;
+  padding: 10px;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.text-container h3 {
+  margin-top: 0;
+  color: #e65100;
+}
+
+#gallery {
+  margin-top: 3em;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 1em;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+footer {
+  background: #ffe0b2;
+  text-align: center;
+  padding: 1.2em;
+  font-weight: bold;
+  color: #4e342e;
+  margin-top: 3em;
+}
+
+#countdown {
+  background: #fff3e0;
+  padding: 2em;
+  margin: 2em 0;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px dashed #ff9800;
+}
+
+#timer {
+  font-size: 1.5em;
+  color: #d84315;
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+/* Memories Gallery Styling */
+#gallery {
+  padding: 2rem;
+  background-color: #fff8ec;
+  text-align: center;
+}
+
+#gallery h2 {
+  font-size: 2rem;
+  color: #b3541e;
+  margin-bottom: 1rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  padding: 0 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+
+.carousel-image:hover {
+  transform: scale(1.05);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffffdd;
+  border: none;
+  font-size: 2rem;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.carousel-btn.left {
+  left: 0;
+}
+
+.carousel-btn.right {
+  right: 0;
+}
+.carousel-image {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 180px; /* Set height */
+  object-fit: cover; /* Prevent distortion */
+  border-radius: 12px;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
+
+
+@keyframes divineFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 5px rgba(255, 87, 34, 0.4);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 87, 34, 0.8);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 5px rgba(255, 87, 34, 0.4);
+  }
+}
+
+.highlight-day {
+  border: 3px solid #ff5722;
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  animation: divineFloat 2.5s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s;
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .day-card {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .icon-container,
+  .text-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .icon-container {
+    margin-right: 0;
+  }
+   
+  .text-container {
+    margin-top: 10px;
+  }
 }

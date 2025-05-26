@@ -14,6 +14,7 @@ const schedule = [
 const container = document.getElementById('days-container');
 schedule.forEach((day) => {
   const card = document.createElement('div');
+  card.classList.add('fade-in');
   card.className = 'day-card';
   if (day.dayNumber === 9) card.classList.add('highlight-day');
 
@@ -61,4 +62,23 @@ if (eventDate < now) {
 
   setInterval(updateCountdown, 1000);
   updateCountdown();
+}
+// Scroll-triggered fade-in effect
+function handleScrollAnimations() {
+  const fadeEls = document.querySelectorAll('.fade-in');
+  fadeEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight - 100;
+    if (isVisible) {
+      el.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', handleScrollAnimations);
+window.addEventListener('load', handleScrollAnimations); // Run on page load
+function scrollGallery(direction) {
+  const track = document.querySelector('.carousel-track');
+  const scrollAmount = 270; // width + gap
+  track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
 }
